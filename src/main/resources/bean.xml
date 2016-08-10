@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="person1" class="study.springframework.Person">
+		<property name="name" value="Light Sword" />
+		<property name="age" value="27" />
+	</bean>
+
+	<bean id="person2" class="study.springframework.Person">
+		<property name="name" value="Shine" />
+		<property name="age" value="27" />
+	</bean>
+
+	<bean id="personManager2" class="study.springframework.PersonManagerImpl2"></bean>
+
+	<!-- 该 BeanPostProcessor 将自动起作用，对标注 @Autowired 的 Bean 进行自动注入 -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+</beans>
