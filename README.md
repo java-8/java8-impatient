@@ -1,6 +1,8 @@
 # java8-impatient
 
-书籍参考: https://www.gitbook.com/book/universsky/impatient-java8/details
+## 书籍参考: 
+
+https://universsky.gitbooks.io/impatient-java8/content/
 
 这是一本Java 8笔记. 
 
