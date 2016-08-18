@@ -1,5 +1,5 @@
 /**
- * DoubleColons.java
+ * FunctionalInterfaceDemo.java
  */
 package study.java8.fp;
 
@@ -15,11 +15,18 @@ public class FunctionalInterfaceDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		FunctionalInterfaceDemo DoubleColons = new FunctionalInterfaceDemo();
-		Converter<String, String> converter = DoubleColons::startWith;
+		FunctionalInterfaceDemo fid = new FunctionalInterfaceDemo();
+		Converter<String, String> converter = fid::startWith;
 		
 		String cc = converter.convert("Scala");
 		System.out.println(cc);
+		
+		Runnable r1 = () -> {
+			System.out.println("Hello Lambda!");
+		};
+		
+		System.out.println((Runnable) () -> {
+		}); // 正确
 		
 	}
 	
