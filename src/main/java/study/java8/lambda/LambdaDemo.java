@@ -6,6 +6,7 @@ package study.java8.lambda;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * @author jack 2016年8月18日 下午2:16:53
@@ -41,6 +42,40 @@ public class LambdaDemo {
 			}
 		});
 		
+		List<String> languages = Arrays.asList("Java",
+		                                       "Scala",
+		                                       "C++",
+		                                       "Haskell",
+		                                       "Lisp");
+		
+		System.out.println("Languages which starts with J :");
+		filter(languages,
+		       (str) -> str.startsWith("J"));
+		
+		System.out.println("Languages which ends with a ");
+		filter(languages,
+		       (str) -> str.endsWith("a"));
+		
+		System.out.println("Print all languages :");
+		filter(languages,
+		       (str) -> true);
+		
+		System.out.println("Print no language : ");
+		filter(languages,
+		       (str) -> false);
+		
+		System.out.println("Print language whose length greater than 4:");
+		filter(languages,
+		       (str) -> str.length() > 4);
+		
+	}
+	
+	public static void filter(List<String> names, Predicate<String> condition) {
+		for (String name : names) {
+			if (condition.test(name)) {
+				System.out.println(name + " ");
+			}
+		}
 	}
 	
 }
